@@ -1,0 +1,137 @@
+{
+    "fields": [
+        {
+            "type": "text",
+            "label": "Username",
+            "name": "username",
+            "placeholder": "Enter your username"
+        },
+        {
+            "type": "text",
+            "label": "First Name",
+            "name": "first_name",
+            "placeholder": "Enter you first name"
+        },
+        {
+            "type": "text",
+            "label": "Last Name",
+            "name": "last_name",
+            "placeholder": "Enter your last name"
+        },
+        {
+            "type": "select",
+            "label": "Country",
+            "name": "country",
+            "placeholder": "What country do you live in",
+            "onchange": ["state", "township"]
+        },
+        {
+            "type": "select",
+            "label": "State",
+            "name": "state",
+            "placeholder": "What state do you live in?",
+            "onchange": ["township"]
+        },
+        {
+            "type": "select",
+            "label": "Township",
+            "name": "township",
+            "placeholder": "What township do you live in"
+        }
+    ],
+    "country":{
+        "options": [
+            {
+                "id": 1,
+                "text": "United States of America",
+                "value": "USA"
+            },
+            {
+                "id": 1,
+                "text": "Europe",
+                "value": "EU"
+            }
+        ]
+    },
+    "state":{
+        "options": [
+            {
+                "id": 1,
+                "text": "New Jersey",
+                "value": "NJ",
+                "when": {
+                    "country": ["USA"]
+                }
+                
+            },
+            {
+                "id": 2,
+                "text": "New York",
+                "value": "NY",
+                "when": {
+                    "country": ["USA"]
+                }
+            },
+            {
+                "id": 3,
+                "text": "Pennsylvania",
+                "value": "PA",
+                "when": {
+                    "country": ["USA"]
+                }
+            },
+            {
+                "id": 4,
+                "text": "Connecticut",
+                "value": "CT",
+                "when": {
+                    "country": ["USA"]
+                }
+            },
+            {
+                "id": 5,
+                "text": "Delaware",
+                "value": "DE",
+                "when": {
+                    "country": ["USA"]
+                }
+            }     
+        ]
+    },
+    "township":{
+        "options": [
+            {
+                "id": 1,
+                "text": "Old Bridge",
+                "value": "old bridge",
+                "when": {
+                    "state": ["NJ"]
+                }
+            },
+            {
+                "id": 2,
+                "text": "Wood Bridge",
+                "value": "wood bridge",
+                "when": {
+                    "state": ["NJ"]
+                }
+            },
+            {
+                "id": 3,
+                "text": "Scranton",
+                "value": "scranton",
+                "when": {
+                    "state": ["PA","NJT","CT"]
+                }
+            },
+            {
+                "id": 3,
+                "text": "Newark",
+                "value": "newark",
+                "when": {
+                    "state": ["NJ","DE"]
+                }
+            }   
+        ]
+    }
+}
